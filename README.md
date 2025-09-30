@@ -29,6 +29,35 @@ From the top level project directory, execute:
 
 This will enable coding standards to be checked locally.
 
+## Recommended Pull Request (PR) Process
+
+If you would like to add a new feature, bug fix, or documentation to ASL & App_rpt the following steps should give a general overview of the process. This is only a general guideline and specific steps could vary based on your preferences, tools, etc. Before starting on any new feature or fix it is recommended to open an Issue (or comment on an existing Issue) for a bug or enhancement request and give the ASL dev team a chance to review what you propose to do and provide feedback.
+
+1. Set up ASL3 on a node using the steps in the [ASL Manual](https://allstarlink.github.io/install/), update all packages, install git
+2. Make (or sync if already exists) a fork on github of https://github.com/AllStarLink/app_rpt
+3. `cd ~; git clone git@github.com:AllStarLink/asl3-asterisk.git`
+4. Download/copy DEBUG_ASTERISK.sh into ~
+5. git clone your fork of app-rpt into ~
+6. `cd ~/asl3-asterisk`
+7. `./build-asl3 -l source build`
+8. `cd ~/asl3-asterisk-*    # the merge directory`
+9. `~/DEBUG_ASTERISK.sh save   # only needed once`
+	* It is recommended to execute "~/DEBUG_ASTERISK.sh restore" before "apt upgrade".
+10. `~/DEBUG_ASTERISK.sh install`
+11. As changes are made during development run the following commands to rebuild
+	* `cd ~/app_rpt`
+	* `make`
+	* `~/DEBUG_ASTERISK.sh install`
+12. As changes have been tested and completed:
+	* `cd ~/app-rpt`
+	* `git commit -a -m "...describe changes made..."`
+	* `git push    # Push changes to your fork`
+	* Above commands may vary depending on if you are developing within a branch, committing only certain changes, or amending a commit.
+13. To restore saved ASL files after development is completed: `~/DEBUG_ASTERISK.sh restore`
+14. Sync your fork on GitHub if changes were made to the ASL app_rpt repo, then `git pull` to pull in changes to your local fork on the node. Note: you may want to work in local branch(es) to make it easier to sync changes, or to separate different changes.
+15. Initiate Pull Request at https://github.com/AllStarLink/app_rpt/pulls
+16. As feedback is received and other changes may be needed, repeat steps in (12.) and reply in PR comments with any useful details on changes that were made.
+
 # Installing
 
 You can use PhreakScript to install Asterisk automatically, first, then use the `rpt_install.sh` script to properly install the files from this repo.
