@@ -39,6 +39,7 @@ If you would like to add a new feature, bug fix, or documentation to ASL & App_r
 4. Download/copy DEBUG_ASTERISK.sh into ~
 5. git clone your fork of app_rpt into ~ (if you had not already done so in the past), then `cd app_rpt`
 	* Create and switch to a new branch in your fork for this PR, eg. `git checkout -b coolnewfeature`
+	* Enable the ASL lint tools: `apt install clang-format codespell; cp .dev/pre-commit .git/hooks/pre-commit`. Changes you make will then be automatically reformatted if needed during commits to meet the Asterisk code formatting guidelines.
 6. `cd ~/asl3-asterisk`
 7. `./build-asl3 -l source build`
 8. `cd ~/asl3-asterisk-*    # the merge directory`
@@ -51,13 +52,23 @@ If you would like to add a new feature, bug fix, or documentation to ASL & App_r
 	* `~/DEBUG_ASTERISK.sh install`
 12. As changes have been tested and completed:
 	* `cd ~/app-rpt`
-	* `git commit -a -m "...describe changes made..."`
+	* `git commit -a -m "...describe changes made..."` See https://docs.asterisk.org/Development/Policies-and-Procedures/Commit-Messages/ for recommended format of commit messages. If PR fixes a bug add `Fixes #<bug#>` in the commit message
 	* `git push    # Push changes to your fork`
-	* Above commands may vary depending on if you are developing within a branch, committing only certain changes, or amending a commit.
+	* Above commands may vary depending on if you are committing only certain changes, or amending a commit.
 13. To restore saved ASL files after development is completed: `~/DEBUG_ASTERISK.sh restore`
 14. If changes are made to the main ASL app_rpt repo while you have any PRs in development or not yet merged, it is generally recommended to only sync your fork on GitHub if changes in the main ASL repo would affect or conflict with your changes. In that case you can sync main/master on github, `git pull` the changes to your local repo main branch on the node and then rebase any branches with `git checkout <branch-name>; git rebase main; git push origin <branch-name>`.
 15. Initiate Pull Request at https://github.com/AllStarLink/app_rpt/pulls
 16. As feedback is received and other changes may be needed, repeat steps in (12.) and reply in PR comments with any useful details on changes that were made.
+
+### General notes on the use of git:
+Use extreme care and confirm things with your research before using any of the below commands.
+* List branches: `git branch`
+* Switch to another branch: `git checkout <branch-name>`
+* Check status, see local changes: `git status`, `git diff`
+* If you did a local commit but need to undo it: `git reset HEAD^`
+* If you pushed a commit but need to remove it: `git reset --hard <sha of commit to go back to>; git push --force`
+* To reset a local branch that was corrupted eg. files accidentally deleted: `git reset --hard origin/<branch-name>` (**will overwrite all local changes**)
+
 
 # Installing
 
