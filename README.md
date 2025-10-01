@@ -37,7 +37,8 @@ If you would like to add a new feature, bug fix, or documentation to ASL & App_r
 2. Make (or sync if already exists) a fork on github of https://github.com/AllStarLink/app_rpt
 3. `cd ~; git clone git@github.com:AllStarLink/asl3-asterisk.git`
 4. Download/copy DEBUG_ASTERISK.sh into ~
-5. git clone your fork of app-rpt into ~
+5. git clone your fork of app_rpt into ~ (if you had not already done so in the past), then `cd app_rpt`
+	* Create and switch to a new branch in your fork for this PR, eg. `git checkout -b coolnewfeature`
 6. `cd ~/asl3-asterisk`
 7. `./build-asl3 -l source build`
 8. `cd ~/asl3-asterisk-*    # the merge directory`
@@ -54,7 +55,7 @@ If you would like to add a new feature, bug fix, or documentation to ASL & App_r
 	* `git push    # Push changes to your fork`
 	* Above commands may vary depending on if you are developing within a branch, committing only certain changes, or amending a commit.
 13. To restore saved ASL files after development is completed: `~/DEBUG_ASTERISK.sh restore`
-14. Sync your fork on GitHub if changes were made to the ASL app_rpt repo, then `git pull` to pull in changes to your local fork on the node. Note: you may want to work in local branch(es) to make it easier to sync changes, or to separate different changes.
+14. If changes are made to the main ASL app_rpt repo while you have any PRs in development or not yet merged, it is generally recommended to only sync your fork on GitHub if changes in the main ASL repo would affect or conflict with your changes. In that case you can sync main/master on github, `git pull` the changes to your local repo main branch on the node and then rebase any branches with `git checkout <branch-name>; git rebase main; git push origin <branch-name>`.
 15. Initiate Pull Request at https://github.com/AllStarLink/app_rpt/pulls
 16. As feedback is received and other changes may be needed, repeat steps in (12.) and reply in PR comments with any useful details on changes that were made.
 

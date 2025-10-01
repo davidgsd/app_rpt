@@ -1039,6 +1039,12 @@ int main(int argc, char *argv[])
 		case 'X':
 			astgetresp(COMMAND_PREFIX "tune menu-support z");
 			break;
+		case '1': /* display transmit audio statistics */
+		case '2':
+			astgetresp(COMMAND_PREFIX "tune menu-support z");
+			sprintf(s1, "%sAudioStats: Pk %5.1f  Avg Pwr %3.0f  Min %3.0f  Max %3.0f  dBFS  ClipCnt %u",
+								prefix_text, dpk, tpwr, dmin, dmax, clipcnt);
+			       break;
 		default:
 			printf("Invalid Entry, try again\n");
 			break;
