@@ -60,11 +60,12 @@ If you would like to add a new feature, bug fix, or documentation to ASL & App_r
 15. Initiate Pull Request at https://github.com/AllStarLink/app_rpt/pulls
 16. As feedback is received and other changes may be needed, repeat steps in (12.) and reply in PR comments with any useful details on changes that were made.
 
-### General notes on the use of git:
-Use extreme care and confirm things with your research before using any of the below commands.
+### Potentially useful git commands:
 * List branches: `git branch`
 * Switch to another branch: `git checkout <branch-name>`
 * Check status, see local changes: `git status`, `git diff`
+
+Use extreme care and confirm things with your research before using any of the below commands.
 * If you did a local commit but need to undo it: `git reset HEAD^`
 * If you pushed a commit but need to remove it: `git reset --hard <sha of commit to go back to>; git push --force`
 * To reset a local branch that was corrupted eg. files accidentally deleted: `git reset --hard origin/<branch-name>` (**will overwrite all local changes**)
