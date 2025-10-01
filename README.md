@@ -52,7 +52,7 @@ If you would like to add a new feature, bug fix, or documentation to ASL & App_r
 	* `~/DEBUG_ASTERISK.sh install`
 12. As changes have been tested and completed:
 	* `cd ~/app-rpt`
-	* `git commit -a -m "...describe changes made..."` See https://docs.asterisk.org/Development/Policies-and-Procedures/Commit-Messages/ for recommended format of commit messages. If PR fixes a bug add `Fixes #<bug#>` in the commit message
+	* `git commit -a -m "...describe changes made..."` See https://docs.asterisk.org/Development/Policies-and-Procedures/Commit-Messages/ for recommended format of commit messages. If the changes fix a bug add "Fixes #&lt;bug#&gt;" in the commit message
 	* `git push    # Push changes to your fork`
 	* Above commands may vary depending on if you are committing only certain changes, or amending a commit.
 13. To restore saved ASL files after development is completed: `~/DEBUG_ASTERISK.sh restore`
@@ -60,7 +60,7 @@ If you would like to add a new feature, bug fix, or documentation to ASL & App_r
 15. Initiate Pull Request at https://github.com/AllStarLink/app_rpt/pulls
 16. As feedback is received and other changes may be needed, repeat steps in (12.) and reply in PR comments with any useful details on changes that were made.
 
-### Potentially useful git commands:
+### Potentially useful git commands
 * List branches: `git branch`
 * Switch to another branch: `git checkout <branch-name>`
 * Check status, see local changes: `git status`, `git diff`
