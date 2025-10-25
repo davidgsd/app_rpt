@@ -28,7 +28,7 @@
  * 20161024	inad	fixed set the number of coefficients
  * 20161027	WN3A    allow filters of different tap counts
  * 20090725 2039 sph@xelatec.com improved rxfrontend and squelch
-  */
+ */
 
 /*! \file
  *
