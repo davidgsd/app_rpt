@@ -23,9 +23,6 @@
  *
  * A license has been granted to Digium (via disclaimer) for the use of
  * this code.
-
- * A license has been granted to Digium (via disclaimer) for the use of
- * this code.
  *
  * 20160829	inad	added rxlpf rxhpf txlpf txhpf
  * 20161024	inad	fixed set the number of coefficients
